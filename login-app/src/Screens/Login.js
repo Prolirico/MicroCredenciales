@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  const [usuario, setUsuario] = useState('');
-  const [contraseña, setContraseña] = useState('');
+function Login() {
+  const [usuario, setUsuario] = useState("");
+  const [contraseña, setContraseña] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Usuario:', usuario);
-    console.log('Contraseña:', contraseña);
+    console.log("Usuario:", usuario);
+    console.log("Contraseña:", contraseña);
     // Aquí puedes agregar la lógica de autenticación
   };
 
   return (
-    <div className="App">
+    <div className="LoginPrincipal">
       <div className="login-container">
-        <h1 className="login-title">Login</h1>
+        <h1 className="login-title">SEDEQ</h1>
         <div className="login-box">
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label htmlFor="usuario">Usuario</label>
+              <label htmlFor="usuario">Correo</label>
               <input
                 type="text"
                 id="usuario"
@@ -50,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
