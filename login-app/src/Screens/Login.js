@@ -32,6 +32,11 @@ function Login() {
         placeholder="Contraseña"
       />
       <button type="submit">Iniciar sesion</button>
+      <div>
+        <input type="checkbox" id="rememberMe" />
+        <label htmlFor="rememberMe">Recordarme</label>
+      </div>
+      <img src="../src/Assets/logoGoogle.svg" alt="Iniciar sesión con Google" />
     </form>
   );
 }
