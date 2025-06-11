@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
     //console.log("Email:", email);
     //console.log("Password:", password);
-    if (email == "022000708@upsrj.edu.mx" && password == "123456789") {
+    if (email === "022000708@upsrj.edu.mx" && password === "123456789") {
       navigate("/home");
     } else {
       alert("Correo o contraseña incorrectos");
