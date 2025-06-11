@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from '../Components/controls/Button';
+import FormItem from '../Components/controls/FormItem';
 
 function Login() {
   // Variables
@@ -19,24 +21,23 @@ function Login() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <FormItem
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Correo electronico"
       />
-      <input
+      <FormItem
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Contraseña"
       />
-      <button type="submit">Iniciar sesion</button>
+      <Button type="submit">Iniciar sesion</Button>
       <div>
         <input type="checkbox" id="rememberMe" />
         <label htmlFor="rememberMe">Recordarme</label>
-      </div>
-      <img src="../src/Assets/logoGoogle.svg" alt="Iniciar sesión con Google" />
+      </div>{" "}
     </form>
   );
 }

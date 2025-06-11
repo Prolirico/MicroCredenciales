@@ -1,0 +1,46 @@
+/* MicroCredenciales/login-app/src/styles/global.css */
+
+/* Opcional: Reset básico para eliminar estilos por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definimos variables CSS (Custom Properties) basadas en tus constantes */
+/* Esto es muy útil para la reusabilidad de colores, fuentes, etc. */
+:root {
+    /* Colores (adaptando de MicroCredenciales/login-app/src/Constants/Colors.js) */
+    --color-black: #000000;
+    --color-white: #ffffff; /* Corregido a #FFFFFF */
+    --color-blue: #236de8; /* Corregido a #236DE8 (faltaba el # y estaba en minúsculas) */
+
+    /* Tipografía (adaptando de MicroCredenciales/login-app/src/Constants/Fonts.js) */
+    --font-family-primary:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    --font-family-secondary:
+        "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        sans-serif;
+    --font-family-monospace:
+        "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
+
+    /* Tamaño de fuente base para REM */
+    /* 100% = 16px por defecto. 1rem = 16px. */
+    /* Si prefieres 1rem = 10px para cálculos más fáciles, usa 62.5% */
+    font-size: 100%;
+
+    /* Puedes añadir aquí otras variables para espaciado (margin/padding), sombras, bordes, etc. */
+    --spacing-unit: 0.5rem; /* Ejemplo: Puedes definir una unidad base para espaciado */
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.5;
+    color: var(--color-black); /* Usando variable de color */
+    background-color: var(--color-white); /* Usando variable de color */
+    /* Establece estilos globales para el cuerpo si es necesario */
+}
+
+/* Puedes añadir otros estilos globales aquí si los necesitas */
