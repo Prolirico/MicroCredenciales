@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from '../Components/controls/Button';
-import FormItem from '../Components/controls/FormItem';
+import Button from "../Components/controls/Button";
+import FormItem from "../Components/controls/FormItem";
+import styles from "./Login.module.css";
 
 function Login() {
   // Variables
@@ -13,32 +14,49 @@ function Login() {
     e.preventDefault();
     //console.log("Email:", email);
     //console.log("Password:", password);
-    if (email === "022000708@upsrj.edu.mx" && password === "123456789") {
+    if (email === "WebAdmin@gmail.com" && password === "SIESAdmin") {
       navigate("/home");
     } else {
       alert("Correo o contraseña incorrectos");
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <FormItem
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Correo electronico"
-      />
-      <FormItem
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Contraseña"
-      />
-      <Button type="submit">Iniciar sesion</Button>
+    <div className={styles.loginContainer}>
       <div>
-        <input type="checkbox" id="rememberMe" />
-        <label htmlFor="rememberMe">Recordarme</label>
-      </div>{" "}
-    </form>
+        <h2 className={styles.loginText}>Login</h2>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.inputField}>
+          <FormItem
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Correo electronico</label>
+        </div>
+        <div className={styles.inputField}>
+          <FormItem
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Contraseña</label>
+        </div>
+        <div className={styles.forget}>
+          <label htmlFor="rememberMe">
+            <input type="checkbox" id="rememberMe" />
+            <p>Recordarme</p>
+          </label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+        <Button type="submit">Iniciar sesion</Button>
+        <div className={styles.register}>
+          <p>
+            ¿No tienes una cuenta? <a href="#">Registrarse</a>
+          </p>
+        </div>
+      </form>
+    </div>
   );
 }
 export default Login;
