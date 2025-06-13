@@ -6,25 +6,33 @@
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
 }
-body {
-    display: flex;
+
+.fondoLogin {
+    display: flex; /* Centra el contenido */
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    width: 100%;
+    min-height: 100vh; /* Cubre al menos la altura de la ventana */
+    width: 100%; /* Cubre el ancho */
     padding: 0 10px;
+    position: relative; /* Necesario para posicionar el ::before */
+    overflow: hidden; /* Opcional: evita desbordamientos inesperados del fondo */
 }
-body::before {
+
+.fondoLogin::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     /*Ubicacion de la imagen de fondo Login*/
     background: url("../Assets/loginWallpaper.jpg"), #000;
     background-position: center;
     background-size: cover;
-    filter: blur(10px) brightness(0.5);
+    filter: blur(10px) brightness(0.4);
+    z-index: -1; /* Asegura que esté detrás del contenido */
 }
+
 .loginContainer {
     /* background-color: red; */
     width: 50vw;
@@ -55,7 +63,7 @@ form {
 }
 .inputField label {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 0;
     transform: translateY(-50%);
     color: #fff;
@@ -138,7 +146,9 @@ button:hover {
 /* Media Queries for Responsiveness */
 /* Small devices (phones, 576px and below) */
 @media (max-width: 576px) {
-    /* Styles for small screens here */
+    .forget a {
+        margin-top: 10px;
+    }
 }
 
 /* Medium devices (tablets, 577px to 768px) */

@@ -21,41 +21,43 @@ function Login() {
     }
   };
   return (
-    <div className={styles.loginContainer}>
-      <div>
-        <h2 className={styles.loginText}>Login</h2>
+    <div className={styles.fondoLogin}>
+      <div className={styles.loginContainer}>
+        <div>
+          <h2 className={styles.loginText}>Login</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.inputField}>
+            <FormItem
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Correo electronico</label>
+          </div>
+          <div className={styles.inputField}>
+            <FormItem
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>Contraseña</label>
+          </div>
+          <div className={styles.forget}>
+            <label htmlFor="rememberMe">
+              <input type="checkbox" id="rememberMe" />
+              <p>Recordarme</p>
+            </label>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          <Button type="submit">Iniciar sesion</Button>
+          <div className={styles.register}>
+            <p>
+              ¿No tienes una cuenta? <a href="#">Registrarse</a>
+            </p>
+          </div>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.inputField}>
-          <FormItem
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>Correo electronico</label>
-        </div>
-        <div className={styles.inputField}>
-          <FormItem
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <label>Contraseña</label>
-        </div>
-        <div className={styles.forget}>
-          <label htmlFor="rememberMe">
-            <input type="checkbox" id="rememberMe" />
-            <p>Recordarme</p>
-          </label>
-          <a href="#">¿Olvidaste tu contraseña?</a>
-        </div>
-        <Button type="submit">Iniciar sesion</Button>
-        <div className={styles.register}>
-          <p>
-            ¿No tienes una cuenta? <a href="#">Registrarse</a>
-          </p>
-        </div>
-      </form>
     </div>
   );
 }
