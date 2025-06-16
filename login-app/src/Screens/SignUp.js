@@ -9,21 +9,28 @@ function SignUp() {
   // Variables for form input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // You might add other state variables for confirmation password, name, etc.
+  // Add a new state variable for confirming the password
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your sign-up logic here
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return; // Stop the submission if passwords don't match
+    }
+
+    // Add your sign-up logic here if passwords match
     console.log("Sign Up Attempt:");
     console.log("Email:", email);
-    console.log("Password:", password);
+    console.log("Password:", password); // Log the actual password submitted
 
     // For now, just log and navigate back to login or a success page
-    alert("Sign Up form submitted!");
-    // navigate('/login'); // Example navigation after successful signup
+    navigate("/login"); // Example navigation after successful signup
   };
 
   // Placeholder function for Google Sign-in
@@ -73,6 +80,19 @@ function SignUp() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          {/* Confirm Password Field - Bind to the new state variable */}
+          <div className={styles.inputGroup}>
+            {/* You might want to add a lock icon SVG here */}
+            {/* <svg className={styles.inputIcon} ...>...</svg> */}
+            <input
+              placeholder="Confirm Password"
+              className={styles.inputField}
+              type="password"
+              value={confirmPassword} // Use confirmPassword state
+              onChange={(e) => setConfirmPassword(e.target.value)} // Update confirmPassword state
               required
             />
           </div>
