@@ -1,37 +1,76 @@
 .fondoHome {
-    display: flex; /* Organiza los elementos en columna */
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 100%;
-}
-.Header {
-    height: 15vh;
-    width: 100%;
-    display: flex; /* Ordenar los elementos horizontalmente */
-}
-.contenedorHeader1 {
-    background-color: yellow;
-    width: 65%;
-    height: 100%;
-}
-.contenedorHeader2 {
-    width: 35%;
-    height: 100%;
 }
 
-.contenedorHeader2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Reduce la imagen para que quepa en el contenedor manteniendo la relación de aspecto. */
-    display: block; /* Elimine el espacio sobrante debajo de la imagen */
-}
-.contenidoHome {
-    height: 70vh;
-    background-color: green;
-    width: 100%;
-}
-.contenidoFooter {
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 15vh;
-    background-color: blue;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0px;
+}
+
+.headerLeft {
+    flex: 0 0 20%; /* flexible al 20%, evita la contracción/crecimiento*/
+    display: flex;
+    align-items: center;
+}
+
+.headerLeft img {
     width: 100%;
+    height: auto;
+    max-height: 15vh;
+    object-fit: contain;
+}
+
+.headerCenter {
+    flex-grow: 1; /* Permitir que headerCenter crezca y ocupe espacio disponible */
+    display: flex;
+    justify-content: center; /* Horizontal */
+    align-items: center; /* Vertical*/
+    text-align: center;
+    margin: 0 20px;
+    font-size: 3rem; /* Tamaño de la fuente */
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.headerRight {
+    flex: 0 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contenidoHome {
+    height: 70vh; /* Adjust height to 70% of viewport height */
+    padding: 3rem;
+    background-color: #ffffff;
+}
+.contenidoHomeCursos {
+    height: 70vh; /* Adjust height to 70% of viewport height */
+    padding: 3rem;
+    background-color: #ffffff;
+}
+.FiltrosCursos {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Use gap to add space between items */
+}
+
+.contenidoFooter {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    text-align: center;
+    border-top: 1px solid #ccc;
 }

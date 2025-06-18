@@ -5,9 +5,10 @@
 `npm start`
 
 ### User and password for login:
-WebAdmin@gmail.com
-SIESAdmin
-site36787-lxnz30.scloudsite101.com
+email: "alumno@gmail.com", password: "Alumno123"
+email: "maestro@gmail.com", password: "Maestro123"
+email: "universidad@gmail.com", password: "Uni123"
+email: "sedeq@gmail.com", password: "Sedeq123"
 
 ### `npm test`
 
