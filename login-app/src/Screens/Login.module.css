@@ -183,19 +183,13 @@
     background-color: red;
     color: white;
 }
-
-/* Remove styles for the old generic button class if it's not used elsewhere */
-/* button { ... } */
-
-/* Remove styles for old .forget and .register classes */
-/* .forget { ... } */
-/* #rememberMe { ... } */
-/* .forget label { ... } */
-/* .forget label p { ... } */
-/* .forget a, .register a { ... } */
-/* .forget a:hover, .register a:hover { ... } */
-/* .register { ... } */
-
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/**/
 /* Media Queries for Responsiveness (adapted from styled-components media query) */
 @media (max-width: 576px) {
     .loginContainer {

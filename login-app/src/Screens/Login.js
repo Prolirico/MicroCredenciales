@@ -1,23 +1,45 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// Import the CSS module
 import styles from "./Login.module.css";
-
+// Mock user database (replace with API call later)
+const mockUsers = [
+  { id: 1, email: "alumno@gmail.com", password: "Alumno123", role: "ALUMNO" },
+  {
+    id: 2,
+    email: "maestro@gmail.com",
+    password: "Maestro123",
+    role: "MAESTRO",
+  },
+  {
+    id: 3,
+    email: "universidad@gmail.com",
+    password: "Uni123",
+    role: "UNIVERSIDAD",
+  },
+  { id: 4, email: "sedeq@gmail.com", password: "Sedeq123", role: "SEDEQ" },
+];
+//LogicaDiferentesUsuarios
 function Login() {
-  // Variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Funcion de Login
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log("Email:", email);
-    //console.log("Password:", password);
-    if (email === "WebAdmin@gmail.com" && password === "SIESAdmin") {
+    setError("");
+
+    // Simulate API call to validate credentials
+    const user = mockUsers.find(
+      (u) => u.email === email && u.password === password,
+    );
+
+    if (user) {
+      // Store user data in localStorage (replace with JWT and context later)
+      localStorage.setItem("user", JSON.stringify(user));
       navigate("/home");
     } else {
-      alert("Correo o contraseña incorrectos");
+      setError("Correo o contraseña incorrectos");
     }
   };
 

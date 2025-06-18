@@ -4,7 +4,11 @@ import LogoSEDEQ from "../Assets/Secretaria-de-educacion-Queretaro.png";
 import UserMenu from "../Components/controls/UserMenu";
 import MainMenu from "../Components/controls/MainMenu";
 import SplitText from "../Components/controls/SplitText";
-
+//Dashboards
+import StudentDashboard from "../Components/dashboards/StudentDashboard";
+import TeacherDashboard from "../Components/dashboards/TeacherDashboard";
+import UniversityDashboard from "../Components/dashboards/UniversityDashboard";
+import SEDEQDashboard from "../Components/dashboards/SEDEQDashboard";
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
 };
