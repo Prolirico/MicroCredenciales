@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import LogoSEDEQ from "../Assets/Secretaria-de-educacion-Queretaro.png";
 import UserMenu from "../Components/controls/UserMenu";
@@ -9,11 +9,50 @@ import StudentDashboard from "../Components/dashboards/StudentDashboard";
 import TeacherDashboard from "../Components/dashboards/TeacherDashboard";
 import UniversityDashboard from "../Components/dashboards/UniversityDashboard";
 import SEDEQDashboard from "../Components/dashboards/SEDEQDashboard";
+
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
 };
 
 function Home() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Fetch user from localStorage (replace with context or API call later)
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    setUser(storedUser);
+  }, []);
+
+  const renderDashboard = () => {
+    if (!user) {
+      return (
+        <main className={styles.main}>
+          <h2>Welcome to MicroCredenciales</h2>
+          <p>Please log in to access your personalized dashboard.</p>
+          {/* Public course preview */}
+          <div className={styles.coursePreview}>
+            <h3>Explore Our Courses</h3>
+            {/* Add course cards or placeholders */}
+            <p>Sample courses available for all users.</p>
+          </div>
+        </main>
+      );
+    }
+
+    switch (user.role) {
+      case "ALUMNO":
+        return <StudentDashboard userId={user.id} />;
+      case "MAESTRO":
+        return <TeacherDashboard userId={user.id} />;
+      case "UNIVERSIDAD":
+        return <UniversityDashboard userId={user.id} />;
+      case "SEDEQ":
+        return <SEDEQDashboard userId={user.id} />;
+      default:
+        return <p>Invalid user role.</p>;
+    }
+  };
+
   return (
     <div className={styles.fondoHome}>
       {/* Header */}
@@ -40,8 +79,14 @@ function Home() {
         </div>
 
         <div className={styles.headerRight}>
-          <MainMenu />
-          <UserMenu />
+          <MainMenu isAuthenticated={!!user} />
+          <UserMenu
+            user={user}
+            onLogout={() => {
+              localStorage.removeItem("user");
+              setUser(null);
+            }}
+          />
         </div>
       </header>
 
