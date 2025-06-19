@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import LogoSEDEQ from "../Assets/Secretaria-de-educacion-Queretaro.png";
+import logoBlancoCeatYCC from "../Assets/logoBlancoCeatYCC.png";
 import UserMenu from "../Components/controls/UserMenu";
 import MainMenu from "../Components/controls/MainMenu";
 import SplitText from "../Components/controls/SplitText";
+import Card from "../Components/controls/Card";
 //Dashboards
 import StudentDashboard from "../Components/dashboards/StudentDashboard";
 import TeacherDashboard from "../Components/dashboards/TeacherDashboard";
@@ -27,14 +29,18 @@ function Home() {
     if (!user) {
       return (
         <main className={styles.main}>
-          <h2>Welcome to MicroCredenciales</h2>
-          <p>Please log in to access your personalized dashboard.</p>
-          {/* Public course preview */}
-          <div className={styles.coursePreview}>
-            <h3>Explore Our Courses</h3>
-            {/* Add course cards or placeholders */}
-            <p>Sample courses available for all users.</p>
-          </div>
+          <Card
+            title="Bienvenido"
+            description="Ingresa a tu cuenta para desbloquear todas las oportunidades que tenemos para ti."
+            bottomText="Google Services"
+            logoConfig={{
+              type: "image", // ← Usa imagen personalizada
+              imageSrc: logoBlancoCeatYCC,
+              alt: "White CeatYCC Logo",
+              width: 200,
+              height: 200,
+            }}
+          />
         </main>
       );
     }
@@ -92,6 +98,10 @@ function Home() {
 
       {/* Contenido Principal */}
       <main className={styles.contenidoHome}>{renderDashboard()}</main>
+      <main className={styles.contenidoHome}>
+        {/* Ejemplo con logo de Google */}
+        <p>Bienvenido</p>
+      </main>
 
       {/*CRUD */}
       <main className={styles.contenidoHome}>
