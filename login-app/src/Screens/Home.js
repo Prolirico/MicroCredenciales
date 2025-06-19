@@ -91,12 +91,10 @@ function Home() {
       </header>
 
       {/* Contenido Principal */}
-      <main className={styles.contenidoHome}>
-        <h2>hola</h2>
-      </main>
+      <main className={styles.contenidoHome}>{renderDashboard()}</main>
 
       {/*CRUD */}
-      <main className={styles.contenidoHomeCursos}>
+      <main className={styles.contenidoHome}>
         <div className={styles.FiltrosCursos}>
           <h3>Todo</h3>
           <h3>Cursos Gratuitos</h3>

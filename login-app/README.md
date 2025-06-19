@@ -5,10 +5,26 @@
 `npm start`
 
 ### User and password for login:
-email: "alumno@gmail.com", password: "Alumno123"
-email: "maestro@gmail.com", password: "Maestro123"
-email: "universidad@gmail.com", password: "Uni123"
-email: "sedeq@gmail.com", password: "Sedeq123"
+Alumno
+  email:
+    alumno@gmail.com
+  password:
+    Alumno123
+Maestro
+  email:
+    maestro@gmail.com
+  password:
+    Maestro123
+Universidad
+  email:
+    universidad@gmail.com
+  password:
+    Universidad123
+SEDEQ
+  email:
+    sedeq@gmail.com
+  password:
+    Sedeq123
 
 ### `npm test`
 

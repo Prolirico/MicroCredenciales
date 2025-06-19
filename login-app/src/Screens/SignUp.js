@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// Import the CSS module
 import styles from "./SignUp.module.css";
-// Import the Google logo SVG
 import logoGoogle from "../Assets/logoGoogle.svg";
 
 function SignUp() {
@@ -129,9 +127,14 @@ function SignUp() {
           <div className={styles.loginLink}>
             <p>
               Already have an account?{" "}
-              <a href="#" onClick={() => navigate("/login")}>
+              <button
+                onClick={() => navigate("/login")}
+                className={styles.loginLinkButton}
+              >
+                {" "}
+                {/* Agregue una clase para estilos si es necesario */}
                 Login
-              </a>
+              </button>
             </p>
           </div>
         </form>

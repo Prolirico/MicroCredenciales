@@ -44,13 +44,9 @@ function Login() {
   };
 
   return (
-    // Use the original background class
     <div className={styles.fondoLogin}>
-      {/* Use the original container class */}
       <div className={styles.loginContainer}>
-        {/* Reconstruct the form structure based on the styled-components example, but use CSS Module classes */}
         <form onSubmit={handleSubmit}>
-          {/* Heading - Using loginText class for the heading based on original CSS */}
           <p className={styles.loginText} id="heading">
             Login
           </p>
@@ -80,7 +76,6 @@ function Login() {
           </div>
 
           {/* Password Field - adapting from styled-components structure */}
-          {/* Using new class names for the container and icon, input will use original inputField */}
           <div className={styles.inputGroup}>
             <svg
               className={styles.inputIcon}
@@ -103,7 +98,6 @@ function Login() {
           </div>
 
           {/* Button group - adapting from styled-components structure */}
-          {/* Using new class names for the button container and individual buttons */}
           <div className={styles.buttonGroup}>
             <button className={styles.loginButton} type="submit">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -117,7 +111,6 @@ function Login() {
           </div>
 
           {/* Forgot Password button - adapting from styled-components structure */}
-          {/* Using a new class name */}
           <button
             className={styles.forgotPasswordButton}
             onClick={() => navigate("/recuperarContraseña")}
