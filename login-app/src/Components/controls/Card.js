@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Card.module.css";
 import logoBlancoCeatYCC from "../../Assets/logoBlancoCeatYCC.png";
+import LOGOCEATYCCUno from "../../Assets/LOGOCEATYCCUno.png";
 
 const Card = ({
   title = " ",
@@ -16,6 +17,7 @@ const Card = ({
 }) => {
   return (
     <div className={styles.card}>
+      <div className={styles.backgroundBlur}></div>
       <div className={styles.border} />
       <div className={styles.content}>
         <div className={styles.logoContainer}>
@@ -48,9 +50,9 @@ const Card = ({
                 objectFit: "contain",
               }}
             />
-          ) : (
+          ) : logoConfig.type === "none" ? null : (
             <div className={styles.defaultLogo}>
-              <div className={styles.placeholderLogo}>LOGO</div>
+              <div className={styles.placeholderLogo}></div>
             </div>
           )}
         </div>

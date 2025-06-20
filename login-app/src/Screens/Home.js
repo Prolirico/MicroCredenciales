@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import LogoSEDEQ from "../Assets/Secretaria-de-educacion-Queretaro.png";
 import logoBlancoCeatYCC from "../Assets/logoBlancoCeatYCC.png";
+import LOGOCEATYCCUno from "../Assets/LOGOCEATYCCUno.png";
 import UserMenu from "../Components/controls/UserMenu";
 import MainMenu from "../Components/controls/MainMenu";
 import SplitText from "../Components/controls/SplitText";
@@ -32,13 +33,9 @@ function Home() {
           <Card
             title="Bienvenido"
             description="Ingresa a tu cuenta para desbloquear todas las oportunidades que tenemos para ti."
-            bottomText="Google Services"
+            bottomText="Explora nuestros cursos"
             logoConfig={{
-              type: "image", // ← Usa imagen personalizada
-              imageSrc: logoBlancoCeatYCC,
-              alt: "White CeatYCC Logo",
-              width: 200,
-              height: 200,
+              type: "none", // ← No mostrar logo, solo fondo
             }}
           />
         </main>
@@ -69,7 +66,7 @@ function Home() {
 
         <div className={styles.headerCenter}>
           <SplitText
-            text="MicroCredenciales"
+            text="Aprendizaje y Desarrollo Profesional"
             className="text-2xl text-center"
             delay={100}
             duration={0.6}

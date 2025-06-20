@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 15vh;
+    height: 9vh;
     background-color: white;
     border-bottom: 1px solid #ccc;
     padding: 0 0px;
@@ -21,7 +21,7 @@
 .headerLeft img {
     width: 100%;
     height: auto;
-    max-height: 15vh;
+    max-height: 9vh;
     object-fit: contain;
 }
 .headerCenter {
