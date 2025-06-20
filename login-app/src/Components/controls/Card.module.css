@@ -18,9 +18,7 @@
     right: 0;
     bottom: 0;
     background: url("../../Assets/LOGOCEATYCCUno.png") no-repeat center center;
-    background-size: 42%;
-    opacity: 0.4;
-    filter: blur(2px);
+    background-size: 40%;
     z-index: 1;
 }
 

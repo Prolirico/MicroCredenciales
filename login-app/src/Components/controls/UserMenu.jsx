@@ -20,7 +20,7 @@ function UserMenu({ user, onLogout }) {
   const handleLogout = () => {
     onLogout();
     setOpen(false);
-    navigate("/login");
+    navigate("/home");
   };
 
   return (
